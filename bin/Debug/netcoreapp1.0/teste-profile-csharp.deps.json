@@ -1,0 +1,62 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v1.0",
+    "signature": "885779f1337acaba851d2177ee5b94aaed3c55ae"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v1.0": {
+      "teste-profile-csharp/1.0.0": {
+        "dependencies": {
+          "AWSSDK.S3": "3.2.5-beta"
+        },
+        "runtime": {
+          "teste-profile-csharp.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.2.5-beta": {
+        "dependencies": {
+          "System.Collections.NonGeneric": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.5/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.S3/3.2.5-beta": {
+        "dependencies": {
+          "AWSSDK.Core": "3.2.5-beta"
+        },
+        "runtime": {
+          "lib/netstandard1.5/AWSSDK.S3.dll": {}
+        }
+      },
+      "System.Collections.NonGeneric/4.0.1": {
+        "runtime": {
+          "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "teste-profile-csharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWSSDK.Core/3.2.5-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BAVShWctmwCKsVsdmXz2ttpH0b9xDgD5KXMinZDSO27wprdT/9CzaVkPtjqcxbLU9UvNHNHA7r7ZNGOX6pjLTA=="
+    },
+    "AWSSDK.S3/3.2.5-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JbrNcMBu3q41arhhadNSF5b5VEC9JLp5WtIq7sswa/f7YjjPKLEy9AhozjNauqUj1VpA0RpBiNKUdLhtYQzPDA=="
+    },
+    "System.Collections.NonGeneric/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hMxFT2RhhlffyCdKLDXjx8WEC5JfCvNozAZxCablAuFRH74SCV4AgzE8yJCh/73bFnEoZgJ9MJmkjQ0dJmnKqA=="
+    }
+  }
+}
