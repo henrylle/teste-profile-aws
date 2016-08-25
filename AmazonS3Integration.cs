@@ -20,7 +20,7 @@ namespace OregonEAD2.Core.Integration.Concrete
             _amazoS3Client = amazonS3ClientParam;            
         }
         
-        public async Task<CopyObjectResponse> CopiarArquivo(string caminhoArquivo, string nomeBucket)
+        public async void CopiarArquivo(string caminhoArquivo, string nomeBucket)
         {
             CopyObjectRequest request = new CopyObjectRequest
             {
@@ -29,7 +29,8 @@ namespace OregonEAD2.Core.Integration.Concrete
                 DestinationKey = caminhoArquivo,
                 DestinationBucket = "conteudo-oregon",                
             };
-            return await _amazoS3Client.CopyObjectAsync(request);            
+            var response= await _amazoS3Client.CopyObjectAsync(request);            
+            Console.WriteLine(response.ETag);
         }        
     }
 }
