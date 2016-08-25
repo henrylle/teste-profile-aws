@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
 using Amazon.S3;
@@ -12,7 +13,9 @@ namespace ConsoleApplication
         {
             var amazonS3Client = new AmazonS3Client(new InstanceProfileAWSCredentials(), RegionEndpoint.USEast1);
             var amazonS3Integration = new AmazonS3Integration(amazonS3Client);
-            amazonS3Integration.CopiarArquivo("video_profile.mp4", "conteudo-oregon-temp");
+            Task task = (amazonS3Integration.CopiarArquivo("video_profile.mp4", "conteudo-oregon-temp");
+            task.Start();
+            task.Wait();
             Console.WriteLine("Hello World!");
         }
     }

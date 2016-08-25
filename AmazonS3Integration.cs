@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using Amazon.S3;
 using Amazon.S3.Model;
 
@@ -19,7 +20,7 @@ namespace OregonEAD2.Core.Integration.Concrete
             _amazoS3Client = amazonS3ClientParam;            
         }
         
-        public async void CopiarArquivo(string caminhoArquivo, string nomeBucket)
+        public async Task<CopyObjectResponse> CopiarArquivo(string caminhoArquivo, string nomeBucket)
         {
             CopyObjectRequest request = new CopyObjectRequest
             {
@@ -28,7 +29,7 @@ namespace OregonEAD2.Core.Integration.Concrete
                 DestinationKey = caminhoArquivo,
                 DestinationBucket = "conteudo-oregon",                
             };
-            await _amazoS3Client.CopyObjectAsync(request);            
+            return await _amazoS3Client.CopyObjectAsync(request);            
         }        
     }
 }
